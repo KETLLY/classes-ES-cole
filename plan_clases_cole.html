@@ -1,0 +1,303 @@
+<!DOCTYPE html>
+<html lang="es">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>Plan de clases · Cole · Mes 1</title>
+<style>
+  :root{
+    --naranja:#ff7a3d;
+    --azul:#2d5cf0;
+    --verde:#1fae6c;
+    --morado:#8a4fff;
+    --fondo:#fffaf5;
+    --texto:#232323;
+  }
+  *{box-sizing:border-box;}
+  body{
+    margin:0;
+    font-family:'Segoe UI', Arial, sans-serif;
+    background:var(--fondo);
+    color:var(--texto);
+  }
+  header{
+    background:linear-gradient(135deg,var(--morado),var(--azul));
+    color:white;
+    padding:38px 20px 32px;
+    text-align:center;
+  }
+  header h1{margin:0 0 8px; font-size:2rem;}
+  header p{margin:4px 0; opacity:.95;}
+  .tags{
+    display:flex;
+    justify-content:center;
+    gap:8px;
+    flex-wrap:wrap;
+    margin-top:14px;
+  }
+  .tag{
+    background:rgba(255,255,255,.22);
+    padding:5px 14px;
+    border-radius:20px;
+    font-size:.82rem;
+  }
+  main{max-width:900px; margin:0 auto; padding:30px 18px 60px;}
+  .intro{
+    background:white;
+    border-radius:16px;
+    padding:20px 24px;
+    margin-bottom:26px;
+    box-shadow:0 2px 10px rgba(0,0,0,.06);
+  }
+  .semana-titulo{
+    font-size:1.1rem;
+    font-weight:700;
+    color:var(--morado);
+    margin:30px 0 14px;
+    padding-left:4px;
+    border-left:4px solid var(--morado);
+    padding-left:10px;
+  }
+  .grid{
+    display:grid;
+    grid-template-columns:repeat(auto-fit, minmax(260px,1fr));
+    gap:16px;
+  }
+  .clase-card{
+    background:white;
+    border-radius:14px;
+    padding:18px 18px 16px;
+    box-shadow:0 2px 8px rgba(0,0,0,.06);
+    border-top:5px solid var(--naranja);
+    cursor:pointer;
+    transition:.2s;
+  }
+  .clase-card:hover{transform:translateY(-3px); box-shadow:0 6px 16px rgba(0,0,0,.1);}
+  .clase-card.azul{border-top-color:var(--azul);}
+  .clase-card.verde{border-top-color:var(--verde);}
+  .clase-card.morado{border-top-color:var(--morado);}
+  .num{
+    font-size:.75rem;
+    font-weight:700;
+    color:#999;
+    text-transform:uppercase;
+    letter-spacing:.5px;
+  }
+  .titulo-clase{
+    font-size:1.08rem;
+    font-weight:700;
+    margin:4px 0 8px;
+  }
+  .detalle{
+    font-size:.88rem;
+    color:#555;
+    display:none;
+    margin-top:8px;
+    border-top:1px dashed #ddd;
+    padding-top:8px;
+  }
+  .detalle.show{display:block;}
+  .pill{
+    display:inline-block;
+    font-size:.72rem;
+    background:#f1f1f1;
+    color:#555;
+    padding:2px 9px;
+    border-radius:12px;
+    margin:2px 3px 0 0;
+  }
+  .checkbox-row{
+    margin-top:10px;
+    font-size:.82rem;
+    color:#888;
+  }
+  footer{
+    text-align:center;
+    color:#999;
+    font-size:.8rem;
+    padding-bottom:30px;
+  }
+</style>
+</head>
+<body>
+
+<header>
+  <h1>Plan de clases · Cole 🌎</h1>
+  <p>Mes 1 · 18 clases · Nivel A0 → primeros pasos hacia A1</p>
+  <div class="tags">
+    <div class="tag">🎯 Cultura, viajes y aficiones</div>
+    <div class="tag">🎤 Fluidez</div>
+    <div class="tag">😎 Confianza</div>
+    <div class="tag">🎯 Precisión</div>
+    <div class="tag">🗣 Pronunciación</div>
+    <div class="tag">👂 Comprensión oral</div>
+  </div>
+</header>
+
+<main>
+
+  <div class="intro">
+    <p><b>Cómo leer este plan:</b> cada tarjeta es una clase. Haz clic para ver el detalle de gramática, vocabulario y la conexión con las aficiones de Cole (viajes, tecnología, series, deporte, comida, moda, mascotas, aventuras al aire libre). El ritmo es de 18 clases/mes, alternando estructura + tema cultural en cada sesión, igual que el diseño que seguimos con Komal.</p>
+  </div>
+
+  <div class="semana-titulo">Semana 1 · Cimientos y confianza</div>
+  <div class="grid">
+
+    <div class="clase-card" onclick="toggle(this)">
+      <div class="num">Clase 1 · Hoy</div>
+      <div class="titulo-clase">Bienvenida a español</div>
+      <p class="pill">Yo soy...</p><p class="pill">Sonidos</p><p class="pill">Saludos</p>
+      <div class="detalle">Diagnóstico informal, alfabeto y sonidos clave, "yo soy" para presentarse, preguntas para conocerlo. (Archivo aparte: clase1_cole_bienvenida.html)</div>
+    </div>
+
+    <div class="clase-card azul" onclick="toggle(this)">
+      <div class="num">Clase 2</div>
+      <div class="titulo-clase">Sonidos y ritmo del español</div>
+      <p class="pill">Pares mínimos</p><p class="pill">Entonación</p>
+      <div class="detalle">Práctica de pronunciación intensiva: pares mínimos (casa/caza, pero/perro), acentuación, shadowing de frases cortas. Enfoque total en pronunciación y confianza.</div>
+    </div>
+
+    <div class="clase-card verde" onclick="toggle(this)">
+      <div class="num">Clase 3</div>
+      <div class="titulo-clase">Números, fecha y hora</div>
+      <p class="pill">Numerales 0-100</p><p class="pill">Comprensión oral</p>
+      <div class="detalle">Números, días, meses, decir la hora. Actividad de escucha: entender horarios de vuelos/reservas (conexión con viajes).</div>
+    </div>
+
+    <div class="clase-card morado" onclick="toggle(this)">
+      <div class="num">Clase 4</div>
+      <div class="titulo-clase">Presentarse a fondo</div>
+      <p class="pill">Nacionalidad</p><p class="pill">Países</p>
+      <div class="detalle">Nacionalidades, profesiones, países de Latinoamérica que le gustaría visitar (usa el lugar que pensó en la tarea de la clase 1).</div>
+    </div>
+
+    <div class="clase-card" onclick="toggle(this)">
+      <div class="num">Clase 5</div>
+      <div class="titulo-clase">Ser vs. Estar</div>
+      <p class="pill">Identidad</p><p class="pill">Estado de ánimo</p>
+      <div class="detalle">Diferencia clave: "soy" (identidad permanente) vs "estoy" (estado temporal). Precisión gramatical con ejemplos de la vida diaria de Cole.</div>
+    </div>
+
+  </div>
+
+  <div class="semana-titulo">Semana 2 · Vida diaria y aficiones cercanas</div>
+  <div class="grid">
+
+    <div class="clase-card azul" onclick="toggle(this)">
+      <div class="num">Clase 6</div>
+      <div class="titulo-clase">Familia y mascotas</div>
+      <p class="pill">Posesivos</p><p class="pill">Mascotas 🐾</p>
+      <div class="detalle">Vocabulario familiar, posesivos (mi, tu, su), describir a su mascota o la mascota que le gustaría tener.</div>
+    </div>
+
+    <div class="clase-card verde" onclick="toggle(this)">
+      <div class="num">Clase 7</div>
+      <div class="titulo-clase">Mi rutina diaria</div>
+      <p class="pill">Verbos -ar</p><p class="pill">Fluidez</p>
+      <div class="detalle">Presente de verbos -ar (trabajar, estudiar, caminar). Describir un día típico, con foco en fluidez sin detenerse a corregir cada error.</div>
+    </div>
+
+    <div class="clase-card morado" onclick="toggle(this)">
+      <div class="num">Clase 8</div>
+      <div class="titulo-clase">En el restaurante</div>
+      <p class="pill">Comida 🍽</p><p class="pill">Roleplay</p>
+      <div class="detalle">Pedir comida y bebida, vocabulario de restaurante, roleplay cliente/mesero.</div>
+    </div>
+
+    <div class="clase-card" onclick="toggle(this)">
+      <div class="num">Clase 9</div>
+      <div class="titulo-clase">Me gusta / me encanta</div>
+      <p class="pill">Gustar + infinitivo</p><p class="pill">Tecnología</p>
+      <div class="detalle">Estructura "gustar" (diferente del inglés: "me gusta" = "it is pleasing to me"). Ejemplos con tecnología y gadgets.</div>
+    </div>
+
+    <div class="clase-card azul" onclick="toggle(this)">
+      <div class="num">Clase 10</div>
+      <div class="titulo-clase">Series, películas y tecnología</div>
+      <p class="pill">Vocabulario</p><p class="pill">Comprensión oral</p>
+      <div class="detalle">Hablar de series/películas favoritas, mini clip o tráiler en español con subtítulos para practicar comprensión oral.</div>
+    </div>
+
+  </div>
+
+  <div class="semana-titulo">Semana 3 · Deporte, viaje y cultura</div>
+  <div class="grid">
+
+    <div class="clase-card verde" onclick="toggle(this)">
+      <div class="num">Clase 11</div>
+      <div class="titulo-clase">Deporte y gimnasio</div>
+      <p class="pill">Verbos de movimiento</p><p class="pill">Frecuencia</p>
+      <div class="detalle">Vocabulario de deporte y gym, adverbios de frecuencia (siempre, a veces, nunca), hablar de su rutina de ejercicio.</div>
+    </div>
+
+    <div class="clase-card morado" onclick="toggle(this)">
+      <div class="num">Clase 12</div>
+      <div class="titulo-clase">Direcciones y transporte</div>
+      <p class="pill">Preposiciones</p><p class="pill">Viajes ✈️</p>
+      <div class="detalle">Pedir y dar direcciones, medios de transporte, simulación de moverse en una ciudad nueva.</div>
+    </div>
+
+    <div class="clase-card" onclick="toggle(this)">
+      <div class="num">Clase 13</div>
+      <div class="titulo-clase">Un día de aventura al aire libre</div>
+      <p class="pill">Pasado simple (intro)</p><p class="pill">Aventuras</p>
+      <div class="detalle">Introducción ligera al pasado para narrar una excursión o aventura reciente, sin abrumar con conjugaciones completas.</div>
+    </div>
+
+    <div class="clase-card azul" onclick="toggle(this)">
+      <div class="num">Clase 14</div>
+      <div class="titulo-clase">Ropa y moda</div>
+      <p class="pill">Adjetivos</p><p class="pill">Colores</p>
+      <div class="detalle">Describir ropa y estilo con adjetivos y colores, comparar gustos de moda.</div>
+    </div>
+
+    <div class="clase-card verde" onclick="toggle(this)">
+      <div class="num">Clase 15</div>
+      <div class="titulo-clase">Escucha activa: diálogo real</div>
+      <p class="pill">Comprensión oral</p><p class="pill">Sin subtítulos</p>
+      <div class="detalle">Clase enfocada 100% en comprensión auditiva con un diálogo autentico corto, sin apoyo visual al inicio.</div>
+    </div>
+
+  </div>
+
+  <div class="semana-titulo">Semana 4 · Simulación y cierre de mes</div>
+  <div class="grid">
+
+    <div class="clase-card morado" onclick="toggle(this)">
+      <div class="num">Clase 16</div>
+      <div class="titulo-clase">Simulación de viaje</div>
+      <p class="pill">Roleplay</p><p class="pill">Confianza</p>
+      <div class="detalle">Roleplay completo: aeropuerto, hotel, pedir ayuda en la calle. Integra vocabulario de varias clases anteriores.</div>
+    </div>
+
+    <div class="clase-card" onclick="toggle(this)">
+      <div class="num">Clase 17</div>
+      <div class="titulo-clase">Contar una anécdota corta</div>
+      <p class="pill">Conectores</p><p class="pill">Fluidez</p>
+      <div class="detalle">Narrar una anécdota simple en presente con conectores básicos (y, pero, porque, después).</div>
+    </div>
+
+    <div class="clase-card azul" onclick="toggle(this)">
+      <div class="num">Clase 18</div>
+      <div class="titulo-clase">Repaso y evaluación del mes 1</div>
+      <p class="pill">Autoevaluación</p><p class="pill">Portafolio</p>
+      <div class="detalle">Repaso oral de todo lo aprendido, autoevaluación de los 5 focos (fluidez, confianza, precisión, pronunciación, comprensión oral) y plan para el mes 2.</div>
+    </div>
+
+  </div>
+
+  <div class="checkbox-row" style="text-align:center; margin-top:20px;">Haz clic en cualquier tarjeta para ver el detalle de la clase.</div>
+
+</main>
+
+<footer>Plan diseñado para Cole · Nivel A0 · 18 clases/mes · America/New_York</footer>
+
+<script>
+function toggle(card){
+  const det = card.querySelector('.detalle');
+  det.classList.toggle('show');
+}
+</script>
+
+</body>
+</html>

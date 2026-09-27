@@ -1,0 +1,243 @@
+<!DOCTYPE html>
+<html lang="es">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>Clase 1 · Bienvenida a Español · Cole</title>
+<style>
+  :root{
+    --naranja:#ff7a3d;
+    --azul:#2d5cf0;
+    --verde:#1fae6c;
+    --fondo:#fffaf5;
+    --texto:#232323;
+  }
+  *{box-sizing:border-box;}
+  body{
+    margin:0;
+    font-family:'Segoe UI', Arial, sans-serif;
+    background:var(--fondo);
+    color:var(--texto);
+    line-height:1.55;
+  }
+  header{
+    background:linear-gradient(135deg,var(--naranja),var(--azul));
+    color:white;
+    padding:36px 20px 30px;
+    text-align:center;
+  }
+  header h1{margin:0 0 6px; font-size:1.9rem;}
+  header p{margin:0; opacity:.95; font-size:1rem;}
+  .badge{
+    display:inline-block;
+    background:rgba(255,255,255,.22);
+    padding:4px 12px;
+    border-radius:20px;
+    font-size:.8rem;
+    margin-top:10px;
+  }
+  main{max-width:760px; margin:0 auto; padding:24px 18px 60px;}
+  section{
+    background:white;
+    border-radius:16px;
+    padding:22px 22px 26px;
+    margin-bottom:22px;
+    box-shadow:0 2px 10px rgba(0,0,0,.06);
+    border-left:6px solid var(--naranja);
+  }
+  section.azul{border-left-color:var(--azul);}
+  section.verde{border-left-color:var(--verde);}
+  h2{
+    margin-top:0;
+    font-size:1.25rem;
+    display:flex;
+    align-items:center;
+    gap:8px;
+  }
+  .en{
+    color:#666;
+    font-size:.85rem;
+    font-style:italic;
+    margin:2px 0 14px;
+  }
+  .cards{
+    display:grid;
+    grid-template-columns:repeat(auto-fit, minmax(150px,1fr));
+    gap:10px;
+    margin:14px 0;
+  }
+  .card{
+    background:#fdf1e7;
+    border-radius:10px;
+    padding:12px;
+    text-align:center;
+    font-weight:600;
+    cursor:pointer;
+    transition:.2s;
+    border:2px solid transparent;
+  }
+  .card:hover{border-color:var(--naranja); transform:translateY(-2px);}
+  .card small{display:block; font-weight:400; color:#777; margin-top:4px;}
+  .frase-modelo{
+    background:#eef3ff;
+    border-radius:10px;
+    padding:14px 16px;
+    font-size:1.15rem;
+    margin:10px 0;
+  }
+  .frase-modelo b{color:var(--azul);}
+  .blank{
+    border-bottom:2px solid var(--azul);
+    display:inline-block;
+    min-width:110px;
+    text-align:center;
+  }
+  input.respuesta{
+    border:none;
+    border-bottom:2px solid var(--azul);
+    background:transparent;
+    font-size:1rem;
+    width:130px;
+    text-align:center;
+    outline:none;
+    font-family:inherit;
+  }
+  ol.preguntas li{margin-bottom:12px; font-size:1.02rem;}
+  ol.preguntas span{color:#777; font-size:.85rem; display:block;}
+  .check-btn{
+    background:var(--verde);
+    color:white;
+    border:none;
+    padding:10px 18px;
+    border-radius:8px;
+    font-weight:600;
+    cursor:pointer;
+    margin-top:8px;
+  }
+  .check-btn:hover{opacity:.9;}
+  #resultado{margin-top:12px; font-weight:600;}
+  .tarea{
+    background:#fff3e0;
+    border-radius:10px;
+    padding:14px 16px;
+    margin-top:8px;
+  }
+  footer{
+    text-align:center;
+    color:#999;
+    font-size:.8rem;
+    padding-bottom:30px;
+  }
+</style>
+</head>
+<body>
+
+<header>
+  <div class="badge">Nivel A0 · Principiante absoluto</div>
+  <h1>¡Bienvenido, Cole! 🎉</h1>
+  <p>Clase 1 de 18 este mes · 27 de septiembre de 2026</p>
+</header>
+
+<main>
+
+  <section>
+    <h2>👋 Para empezar</h2>
+    <p class="en">Before we start speaking Spanish, let's set expectations.</p>
+    <p>Hoy no vamos a memorizar reglas. Vamos a hablar desde el primer minuto, aunque cometas errores — los errores son parte de aprender. El objetivo de hoy es simple: que puedas presentarte en español y que yo pueda conocerte un poco.</p>
+  </section>
+
+  <section class="azul">
+    <h2>🔊 Sonidos que necesitas hoy</h2>
+    <p class="en">Spanish vowels are always pronounced the same way — no exceptions. Click each card mentally and repeat it out loud 3 times.</p>
+    <div class="cards">
+      <div class="card">A <small>como en "father"</small></div>
+      <div class="card">E <small>como en "elephant" (sin la I)</small></div>
+      <div class="card">I <small>como en "machine"</small></div>
+      <div class="card">O <small>como en "or"</small></div>
+      <div class="card">U <small>como en "moon"</small></div>
+    </div>
+    <div class="cards">
+      <div class="card">RR <small>lengua vibra (r fuerte)</small></div>
+      <div class="card">Ñ <small>como "ny" en "canyon"</small></div>
+      <div class="card">J <small>como "h" en "hot"</small></div>
+      <div class="card">LL <small>como "y" en "yes"</small></div>
+    </div>
+  </section>
+
+  <section>
+    <h2>💬 Saludos básicos</h2>
+    <p class="en">Repeat each phrase out loud before moving to the next.</p>
+    <div class="cards">
+      <div class="card">Hola <small>Hello</small></div>
+      <div class="card">Buenos días <small>Good morning</small></div>
+      <div class="card">Buenas tardes <small>Good afternoon</small></div>
+      <div class="card">¿Cómo estás? <small>How are you?</small></div>
+      <div class="card">Estoy bien <small>I'm good</small></div>
+      <div class="card">Gracias <small>Thank you</small></div>
+      <div class="card">De nada <small>You're welcome</small></div>
+      <div class="card">Adiós <small>Goodbye</small></div>
+    </div>
+  </section>
+
+  <section class="verde">
+    <h2>🧍 "Yo soy…" — cómo presentarte</h2>
+    <p class="en">"Ser" is the verb of identity: who you are, where you're from, your job. Use "yo soy" + noun/adjective/place.</p>
+    <div class="frase-modelo">Yo soy <b>Cole</b>. <span class="en">(I am Cole.)</span></div>
+    <div class="frase-modelo">Yo soy de <b>Estados Unidos</b>. <span class="en">(I am from the U.S.)</span></div>
+    <div class="frase-modelo">Yo soy <b>principiante</b> en español. <span class="en">(I am a beginner in Spanish.)</span></div>
+
+    <p style="margin-top:18px;"><b>Ahora tú:</b> completa en voz alta y luego escribe aquí:</p>
+    <p>Yo soy <input class="respuesta" placeholder="tu nombre"></p>
+    <p>Yo soy de <input class="respuesta" placeholder="tu ciudad/país"></p>
+    <p>Yo soy <input class="respuesta" placeholder="una palabra sobre ti"></p>
+  </section>
+
+  <section class="azul">
+    <h2>❓ Preguntas para conocerte</h2>
+    <p class="en">I'll ask you these out loud in class. Read the Spanish first, use the English only if you get stuck.</p>
+    <ol class="preguntas">
+      <li>¿Cómo te llamas? <span>What's your name?</span></li>
+      <li>¿De dónde eres? <span>Where are you from?</span></li>
+      <li>¿A qué te dedicas? <span>What do you do (for work)?</span></li>
+      <li>¿Qué te gusta hacer? <span>What do you like to do? (piensa en viajes, tecnología, series, deporte)</span></li>
+      <li>¿Por qué quieres aprender español? <span>Why do you want to learn Spanish?</span></li>
+    </ol>
+  </section>
+
+  <section>
+    <h2>✅ Mini repaso</h2>
+    <p class="en">Quick check before we finish — type the missing word.</p>
+    <p>"Hola, <input class="respuesta" id="p1" placeholder="___"> soy Cole." <span class="en">(yo)</span></p>
+    <p>"Yo <input class="respuesta" id="p2" placeholder="___"> de Nueva York." <span class="en">(soy)</span></p>
+    <button class="check-btn" onclick="revisar()">Revisar respuestas</button>
+    <div id="resultado"></div>
+  </section>
+
+  <section class="verde">
+    <h2>📌 Tarea para la próxima clase</h2>
+    <div class="tarea">
+      <p>1. Practica en voz alta tu presentación completa: nombre, origen, profesión y una afición.</p>
+      <p>2. Busca un video corto en YouTube de alguien presentándose en español y trata de identificar 3 palabras que reconoces.</p>
+      <p>3. Piensa en un lugar que quieras visitar en Latinoamérica — lo usaremos en la clase 4.</p>
+    </div>
+  </section>
+
+</main>
+
+<footer>Clase diseñada para Cole · Nivel A0 · Objetivo: cultura, viajes y aficiones</footer>
+
+<script>
+function revisar(){
+  const p1 = document.getElementById('p1').value.trim().toLowerCase();
+  const p2 = document.getElementById('p2').value.trim().toLowerCase();
+  let score = 0;
+  if(p1 === 'yo') score++;
+  if(p2 === 'soy') score++;
+  const div = document.getElementById('resultado');
+  div.style.color = score === 2 ? '#1fae6c' : '#d9534f';
+  div.innerText = score === 2 ? '¡Perfecto! Dominas "yo soy". 🎉' : `Tienes ${score}/2 correctas. Repasa "yo" y "soy" antes de la próxima clase.`;
+}
+</script>
+
+</body>
+</html>
