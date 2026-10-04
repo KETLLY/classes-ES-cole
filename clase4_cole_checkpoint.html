@@ -1,0 +1,209 @@
+<!DOCTYPE html>
+<html lang="es">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>Clase 4 · Repaso profundo + Colombia y tu cultura · Cole</title>
+<style>
+  :root{--naranja:#ff7a3d; --azul:#2d5cf0; --verde:#1fae6c; --morado:#8a4fff; --fondo:#fffaf5; --texto:#232323;}
+  *{box-sizing:border-box;}
+  body{margin:0; font-family:'Segoe UI', Arial, sans-serif; background:var(--fondo); color:var(--texto); line-height:1.6;}
+  header{background:linear-gradient(135deg,var(--morado),var(--naranja)); color:white; padding:30px 20px 24px; text-align:center;}
+  header h1{margin:0 0 6px; font-size:1.9rem;}
+  header p{margin:0; opacity:.95;}
+  .badge{display:inline-block; background:rgba(255,255,255,.22); padding:4px 12px; border-radius:20px; font-size:.8rem; margin:4px 4px 0;}
+  .marco{max-width:800px; margin:-10px auto 0; padding:0 18px;}
+  .resultado{background:white; border-radius:16px; padding:20px 22px; margin-top:18px; box-shadow:0 2px 10px rgba(0,0,0,.07); border-top:5px solid var(--morado);}
+  .resultado h3{margin:0 0 6px; font-size:.95rem; color:var(--morado); text-transform:uppercase; letter-spacing:.5px;}
+  .resultado p{margin:0 0 14px; font-size:1.02rem;}
+  .porque{background:#fff3d6; border-left:4px solid var(--naranja); border-radius:8px; padding:12px 16px; font-size:.92rem; margin-bottom:14px;}
+  .comp-grid{display:grid; grid-template-columns:repeat(auto-fit,minmax(190px,1fr)); gap:10px;}
+  .comp{background:#f7f5ff; border-radius:10px; padding:10px 12px; font-size:.85rem;}
+  .comp b{display:block; font-size:.9rem; margin-bottom:3px;}
+  .etapa{display:flex; gap:6px; flex-wrap:wrap; margin-top:16px;}
+  .etapa span{background:#eee; color:#777; font-size:.68rem; padding:3px 9px; border-radius:10px; font-weight:600;}
+  .etapa span.on{background:var(--morado); color:white;}
+  main{max-width:800px; margin:0 auto; padding:24px 18px 60px;}
+  section{background:white; border-radius:16px; padding:22px 22px 26px; margin-bottom:22px; box-shadow:0 2px 10px rgba(0,0,0,.06); border-left:6px solid var(--morado);}
+  section.naranja{border-left-color:var(--naranja);}
+  section.verde{border-left-color:var(--verde);}
+  section.azul{border-left-color:var(--azul);}
+  h2{margin-top:0; font-size:1.25rem; display:flex; justify-content:space-between; align-items:baseline; flex-wrap:wrap; gap:8px;}
+  .etiqueta-etapa{font-size:.68rem; color:#aaa; text-transform:uppercase; letter-spacing:1px; margin-bottom:4px; font-weight:700;}
+  h3.sub{font-size:.95rem; color:#888; margin:18px 0 6px;}
+  .min{font-size:.72rem; background:#f1f1f1; color:#666; padding:3px 10px; border-radius:12px; font-weight:600;}
+  .instruccion{background:#eafbe8; border-left:4px solid var(--verde); border-radius:8px; padding:12px 14px; margin-bottom:14px; font-size:.95rem;}
+  .instruccion b{color:#167a4a;}
+  .nota-prof{background:#f4f4f4; border-radius:8px; padding:8px 12px; margin-top:10px; font-size:.78rem; color:#888; font-style:italic;}
+  .flash-grid{display:grid; grid-template-columns:repeat(auto-fit, minmax(140px,1fr)); gap:12px; margin:10px 0 16px;}
+  .flash{border-radius:14px; padding:0; text-align:center; border:2px solid transparent; height:120px; cursor:pointer; perspective:600px;}
+  .flash-inner{position:relative; width:100%; height:100%; transition:transform .5s; transform-style:preserve-3d;}
+  .flash.flipped .flash-inner{transform:rotateY(180deg);}
+  .flash-front, .flash-back{position:absolute; width:100%; height:100%; backface-visibility:hidden; display:flex; flex-direction:column; align-items:center; justify-content:center; border-radius:14px; padding:8px;}
+  .flash .icono{font-size:2rem; display:block; margin-bottom:4px;}
+  .flash .palabra{font-weight:700; font-size:.92rem;}
+  .flash .trad{font-size:.82rem;}
+  .flash .toca{font-size:.68rem; color:#999; margin-top:4px;}
+  .f-morado .flash-front{background:#f4eaff;} .f-morado .flash-back{background:#8a4fff; color:white; transform:rotateY(180deg);}
+  .f-azul .flash-front{background:#eef3ff;} .f-azul .flash-back{background:#2d5cf0; color:white; transform:rotateY(180deg);}
+  .f-verde .flash-front{background:#eafaf0;} .f-verde .flash-back{background:#1fae6c; color:white; transform:rotateY(180deg);}
+  .match-box{background:#fff8e8; border-radius:10px; padding:16px; margin-top:10px;}
+  .match-row{display:flex; justify-content:space-between; gap:12px; padding:8px 0; border-bottom:1px dashed #ddd; font-size:.95rem;}
+  .cloze{background:#eef3ff; border-radius:10px; padding:16px; margin-top:10px; font-size:1.02rem;}
+  .cloze .blank{border-bottom:2px solid var(--azul); display:inline-block; min-width:90px;}
+  .dialogo{background:#f4eaff; border-radius:10px; padding:16px; margin-top:10px;}
+  .dialogo p{margin:7px 0;}
+  .dialogo b{color:var(--morado);}
+  .mono{background:#e8f7ff; border-radius:10px; padding:16px; margin-top:10px;}
+  .lecto{background:#fff0f6; border-radius:10px; padding:16px; margin-top:10px;}
+  .lecto textarea{width:100%; min-height:110px; border-radius:8px; border:1px solid #ddd; padding:10px; font-family:inherit; font-size:.95rem; margin-top:8px;}
+  .tarea{background:#fff3e0; border-radius:10px; padding:14px 16px; margin-top:8px;}
+  .tarea .modelo{background:#fffcf5; border:1px dashed #e0c88a; border-radius:8px; padding:10px 12px; margin-top:8px; font-size:.9rem;}
+  .criterio{background:#f0f8ff; border-radius:8px; padding:10px 12px; margin-top:10px; font-size:.88rem;}
+  .criterio b{color:var(--azul);}
+  .fuente{font-size:.72rem; color:#aaa; margin-top:28px; text-align:center;}
+  footer{text-align:center; color:#999; font-size:.8rem; padding-bottom:30px;}
+</style>
+</head>
+<body>
+
+<header>
+  <div class="badge">Nivel A0→A1 · Repaso profundo + Colombia</div>
+  <div class="badge">Duración total: ~60 min</div>
+  <h1>Clase 4 · Lo que ya sabes hacer 🏁</h1>
+  <p>Clase 4 de 18</p>
+</header>
+
+<div class="marco">
+  <div class="resultado">
+    <h3>🎯 Resultado de aprendizaje</h3>
+    <p>Al final de esta clase, Cole podrá <b>demostrar con producción activa</b> (no solo reconocimiento) lo aprendido en las clases 1, 2 y 3 por igual, usar vocabulario de rutina y Colombia en oraciones propias, y sostener una conversación básica sobre su cultura y la de su novia.</p>
+    <div class="porque">
+      <b>Por qué importa esto:</b> tu meta es hablar con tu novia y su familia. Hoy no vamos a ver vocabulario nuevo superficialmente — vamos a tomar menos palabras y trabajarlas más a fondo, para que de verdad las uses, no solo las reconozcas.
+    </div>
+    <h3>🧩 Competencias que desarrollamos hoy</h3>
+    <div class="comp-grid">
+      <div class="comp"><b>Comunicativa · integrada</b>Producir, no solo reconocer, lo aprendido en 3 clases.</div>
+      <div class="comp"><b>Comunicativa · intercultural</b>Hablar de Colombia y de tu propia cultura.</div>
+      <div class="comp"><b>Literacidad</b>Escribir usando el vocabulario trabajado hoy.</div>
+      <div class="comp"><b>Saber aprender</b>Identificar qué dominas y qué necesitas repasar más.</div>
+    </div>
+    <div class="etapa">
+      <span class="on">1. Conectar</span><span>2. Input</span><span>3. Foco</span><span>4. Práctica</span><span>5. Uso real</span><span>6. Reflexión</span>
+    </div>
+  </div>
+</div>
+
+<main>
+
+  <section>
+    <div class="etiqueta-etapa">Etapa 1 · Conectar — repaso con producción activa</div>
+    <h2>🔁 Repaso equilibrado: clases 1, 2 y 3 <span class="min">12 min</span></h2>
+    <div class="instruccion"><b>Qué haces tú, Cole:</b> cada bloque exige que produzcas algo nuevo, no que marques una casilla. Vamos clase por clase, el mismo tiempo para cada una.</div>
+
+    <h3 class="sub">De la Clase 1 (presentarte)</h3>
+    <p>Preséntate en 30 segundos sin plantilla: nombre, origen, profesión.</p>
+
+    <h3 class="sub">De la Clase 2 (sonidos)</h3>
+    <p>Di estas tres palabras en voz alta y dime cuál par mínimo forman: <b>pero / perro</b>, <b>casa / caza</b>. Luego repite el trabalenguas completo una vez, a velocidad normal.</p>
+
+    <h3 class="sub">De la Clase 3 (números y hora)</h3>
+    <p>Dime tu número de teléfono completo y la hora actual, sin ayuda.</p>
+
+    <div class="nota-prof">Nota para la profesora: si Cole falla en algún bloque, es información real sobre qué repasar — no avances a lo nuevo sin resolverlo primero.</div>
+  </section>
+
+  <section class="azul">
+    <div class="etiqueta-etapa">Etapa 2 y 3 · Input + Foco — lenguaje nuevo con 4 canales</div>
+    <h2>⏰ Tu rutina diaria (profundidad, no superficie) <span class="min">14 min</span></h2>
+    <div class="instruccion"><b>Qué haces tú, Cole:</b> trabajamos solo 5 verbos, pero en cuatro pasos cada uno: leer, oír, decir, escribir. Esto se queda en la memoria mucho mejor que ver 20 palabras una sola vez.</div>
+
+    <h3 class="sub">Paso 1 — Leer y oír (flashcards)</h3>
+    <div class="flash-grid">
+      <div class="flash f-azul" onclick="this.classList.toggle('flipped')"><div class="flash-inner"><div class="flash-front"><span class="icono">⏰</span><span class="palabra">levantarse</span><span class="toca">toca para ver</span></div><div class="flash-back"><span class="palabra">to get up</span></div></div></div>
+      <div class="flash f-azul" onclick="this.classList.toggle('flipped')"><div class="flash-inner"><div class="flash-front"><span class="icono">🥐</span><span class="palabra">desayunar</span><span class="toca">toca para ver</span></div><div class="flash-back"><span class="palabra">to have breakfast</span></div></div></div>
+      <div class="flash f-azul" onclick="this.classList.toggle('flipped')"><div class="flash-inner"><div class="flash-front"><span class="icono">💼</span><span class="palabra">trabajar</span><span class="toca">toca para ver</span></div><div class="flash-back"><span class="palabra">to work</span></div></div></div>
+      <div class="flash f-azul" onclick="this.classList.toggle('flipped')"><div class="flash-inner"><div class="flash-front"><span class="icono">🍽️</span><span class="palabra">cenar</span><span class="toca">toca para ver</span></div><div class="flash-back"><span class="palabra">to have dinner</span></div></div></div>
+      <div class="flash f-azul" onclick="this.classList.toggle('flipped')"><div class="flash-inner"><div class="flash-front"><span class="icono">🌙</span><span class="palabra">dormir</span><span class="toca">toca para ver</span></div><div class="flash-back"><span class="palabra">to sleep</span></div></div></div>
+    </div>
+
+    <h3 class="sub">Paso 2 — Decir (emparejar en voz alta)</h3>
+    <div class="match-box">
+      <p style="font-size:.85rem; color:#888; margin-top:0;">Di en voz alta la hora que corresponde a cada verbo, según tu rutina real — no hay respuesta correcta fija, es sobre ti.</p>
+      <div class="match-row"><span>levantarse</span><span>→ ¿a qué hora?</span></div>
+      <div class="match-row"><span>desayunar</span><span>→ ¿a qué hora?</span></div>
+      <div class="match-row"><span>trabajar</span><span>→ ¿a qué hora empiezas?</span></div>
+      <div class="match-row"><span>cenar</span><span>→ ¿a qué hora?</span></div>
+      <div class="match-row"><span>dormir</span><span>→ ¿a qué hora?</span></div>
+    </div>
+
+    <h3 class="sub">Paso 3 — Escribir (completa la frase)</h3>
+    <div class="cloze">
+      Yo <span class="blank">___</span> a las siete de la mañana, y <span class="blank">___</span> a las ocho de la noche.
+      <p style="font-size:.85rem; color:#888; margin-top:8px;">Escribe la frase completa con tus propios verbos y horas reales, no copies el ejemplo.</p>
+    </div>
+    <div class="nota-prof">Nota para la profesora: estos 3 pasos (leer/oír → decir → escribir) son los que la evidencia de adquisición de vocabulario recomienda para que una palabra pase de reconocimiento a producción real.</div>
+  </section>
+
+  <section class="morado">
+    <div class="etiqueta-etapa">Etapa 2 y 3 · Input + Foco — Colombia, con la misma profundidad</div>
+    <h2>🇨🇴 Colombia: lo que vas a necesitar de verdad <span class="min">12 min</span></h2>
+    <div class="instruccion"><b>Qué haces tú, Cole:</b> mismos 3 pasos que arriba — leer/oír, decir, escribir — pero con palabras reales para hablar con tu novia y su familia, no datos turísticos.</div>
+
+    <h3 class="sub">Paso 1 — Leer y oír</h3>
+    <div class="flash-grid">
+      <div class="flash f-morado" onclick="this.classList.toggle('flipped')"><div class="flash-inner"><div class="flash-front"><span class="icono">🇨🇴</span><span class="palabra">colombiano/a</span><span class="toca">toca para ver</span></div><div class="flash-back"><span class="palabra">Colombian</span></div></div></div>
+      <div class="flash f-morado" onclick="this.classList.toggle('flipped')"><div class="flash-inner"><div class="flash-front"><span class="icono">👋</span><span class="palabra">parce / parcero</span><span class="toca">toca para ver</span></div><div class="flash-back"><span class="palabra">buddy (muy usado en Colombia)</span></div></div></div>
+      <div class="flash f-morado" onclick="this.classList.toggle('flipped')"><div class="flash-inner"><div class="flash-front"><span class="icono">☕</span><span class="palabra">tinto</span><span class="toca">toca para ver</span></div><div class="flash-back"><span class="palabra">café negro (expresión colombiana)</span></div></div></div>
+      <div class="flash f-morado" onclick="this.classList.toggle('flipped')"><div class="flash-inner"><div class="flash-front"><span class="icono">🭓</span><span class="palabra">arepa</span><span class="toca">toca para ver</span></div><div class="flash-back"><span class="palabra">plato típico colombiano</span></div></div></div>
+      <div class="flash f-morado" onclick="this.classList.toggle('flipped')"><div class="flash-inner"><div class="flash-front"><span class="icono">👪</span><span class="palabra">la familia</span><span class="toca">toca para ver</span></div><div class="flash-back"><span class="palabra">central en la cultura colombiana</span></div></div></div>
+    </div>
+
+    <h3 class="sub">Paso 2 — Decir (produce tu propia frase)</h3>
+    <p style="font-size:.95rem;">Usa "parce" o "tinto" en una oración sobre tu novia o algo que ella te haya contado. Dila en voz alta.</p>
+
+    <h3 class="sub">Paso 3 — Escribir</h3>
+    <div class="cloze">
+      Mi novia es <span class="blank">colombiana</span>, de la región de <span class="blank">___</span>, y su familia es muy importante para <span class="blank">___</span>.
+    </div>
+
+    <div class="instruccion" style="margin-top:16px;"><b>Ahora tú, Cole:</b> cuéntame algo real de tu propia cultura o ciudad — una comida, una palabra típica, una costumbre — como si se lo explicaras a ella por primera vez. Esto va en los mismos 3 pasos: dilo, y luego escríbelo abajo.</div>
+    <div class="lecto">
+      <textarea placeholder="En mi cultura, nosotros... Una comida típica de donde soy es... Una costumbre que tenemos es..."></textarea>
+    </div>
+    <div class="nota-prof">Nota para la profesora: pregúntale específicamente qué palabras quiere poder usar con ella o su familia — esto hace la clase más valiosa que cualquier lista genérica.</div>
+  </section>
+
+  <section class="azul">
+    <div class="etiqueta-etapa">Etapa 5 · Uso real</div>
+    <h2>🎙️ Conversación integrada: todo junto <span class="min">10 min</span></h2>
+    <div class="instruccion"><b>Qué haces tú, Cole:</b> habla sin pausas durante 90 segundos combinando: tu presentación, tu rutina con horas reales, y una frase sobre Colombia o tu propia cultura. No hay plantilla — ya trabajaste cada pieza por separado, ahora las unes.</div>
+    <div class="mono">
+      <p>Esto no es memorizar un discurso — es usar en una sola conversación lo que acabas de practicar en partes.</p>
+    </div>
+  </section>
+
+  <section>
+    <div class="etiqueta-etapa">Etapa 6 · Reflexión</div>
+    <h2>✅ Repaso final mezclado <span class="min">6 min</span></h2>
+    <div class="instruccion"><b>Qué haces tú, Cole:</b> sin ver la clase, responde rápido: ¿qué verbo de rutina se te olvidó? ¿qué palabra de Colombia te costó más? Dime una cosa que dominas hoy y una que necesitas repasar.</div>
+  </section>
+
+  <section class="naranja">
+    <h2>📌 Tarea para la próxima clase</h2>
+    <div class="tarea">
+      <p><b>Tarea 1:</b> escribe tu rutina diaria completa (5-6 oraciones) usando los 5 verbos de hoy con horas reales.</p>
+      <div class="modelo">Modelo: "Yo me levanto a las siete. Desayuno a las siete y media. Trabajo desde las nueve. Almuerzo a la una. Ceno a las ocho. Duermo a las once."</div>
+      <p style="margin-top:10px;"><b>Tarea 2:</b> pregúntale a tu novia una palabra o expresión colombiana que no conozcas, y escríbela con su significado.</p>
+      <div class="criterio"><b>Tu tarea está bien hecha si:</b> (1) usaste los 5 verbos de rutina con horas distintas, (2) la palabra colombiana nueva viene con su significado en tus propias palabras, no copiado de internet.</div>
+    </div>
+  </section>
+
+  <p class="fuente">Diseño basado en el ciclo de adquisición de vocabulario leer-oír-decir-escribir (Qlango, 2026), el flujo de clase Connect-Input-Focus-Practice-Use-Reflect de Pearson Languages, la estructura de 5 etapas para clases online recurrentes (English Coach Online), y principios de tareas con andamiaje y criterios de éxito explícitos (Griffith University, investigación sobre homework scaffolding).</p>
+
+</main>
+
+<footer>Clase diseñada para Cole · Nivel A0 · Objetivo: hablar con su novia colombiana y su familia</footer>
+
+</body>
+</html>
